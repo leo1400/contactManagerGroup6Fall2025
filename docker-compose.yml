@@ -1,0 +1,23 @@
+services:
+  web:
+    build: ./php-apache
+    image: php-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./index.html:/var/www/html/index.html
+      - ./LAMPAPI/Login.php:/var/www/html/LAMPAPI/Login.php
+      - ./vendor/:/var/www/html/vendor/
+      - ./composer.json:/var/www/html/composer.json
+      - ./composer.lock:/var/www/html/composer.lock
+      - ./.env:/var/www/html/.env
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_DATABASE=testdb
+    volumes:
+      - ./db_init:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
