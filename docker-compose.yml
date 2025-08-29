@@ -7,10 +7,13 @@ services:
     volumes:
       - ./index.html:/var/www/html/index.html
       - ./LAMPAPI/Login.php:/var/www/html/LAMPAPI/Login.php
+      - ./js/code.js:/var/www/html/js/code.js
       - ./vendor/:/var/www/html/vendor/
       - ./composer.json:/var/www/html/composer.json
       - ./composer.lock:/var/www/html/composer.lock
       - ./.env:/var/www/html/.env
+      - ./contact/contact.php:/var/www/html/contact/contact.php
+      - ./contact/logout.php:/var/www/html/contact/logout.php
   db:
     image: mysql:8.0
     environment:
