@@ -1,6 +1,6 @@
-const urlBase = "http://localhost:8080/LAMPAPI/"
+const urlBase = "http://contactymanager.shop/LAMPAPI/"
 const phpBase = ".php"
-const loginUrlBase = "http://localhost:8080/contact/";
+const loginUrlBase = "http://contactymanager.shop/contact/";
 function doLogin() {
 
 	let userLogin = document.getElementById("userLogin").value;
