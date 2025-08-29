@@ -32,5 +32,5 @@ function doLogin() {
 
 }
 function doLogout() {
-	window.location.href = window.location.href = loginUrlBase + "logout" + phpBase;
+	window.location.href = loginUrlBase + "logout" + phpBase;
 }
