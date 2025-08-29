@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<p>Welcome you are signed in</p>
+		<p>Welcome <?php echo $_SESSION['firstname']?> you are signed in</p>
 	<div id="logoutButton">
 			<button onclick="doLogout()">Logout</button>
 	</div>
