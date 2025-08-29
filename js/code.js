@@ -16,7 +16,6 @@ function doLogin() {
 	let url = urlBase + "Login" + phpBase;
 	htr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			console.log(JSON.parse(htr.responseText));
 			const result = JSON.parse(htr.responseText);
 			if (result.status == "success") {
 				window.location.href = loginUrlBase + "contact" + phpBase;
