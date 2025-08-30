@@ -9,6 +9,7 @@
 <head>
 	<title>contacty</title>
 	<script src="../js/code.js"></script>
+	<link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>

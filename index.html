@@ -1,23 +1,54 @@
 <html>
 
 <head>
+	<meta charset="UTF-8">
 	<title>contacty</title>
 	<script src="js/code.js"></script>
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+	<div class="wrapper">
 
-	<div id="loginDiv">
-		<p>
-			<label>Login</label>
-			<input type="text" id="userLogin"></input>
-		</p>
-		<p>
-			<label>Password</label>
-			<input type="text" id="userPassword"></input>
-		</p>
-		<button onclick="doLogin()">Do it</button>
-		<span id="loginResult"></span>
+		<!-- Login Form -->
+		<div id="loginDiv">
+			<h2>Login</h2>
+			<label>Username</label><br>
+			<input type="text" id="userLogin"><br><br>
+
+			<label>Password</label><br>
+			<input type="password" id="userPassword"><br><br>
+
+			<button class="primary" onclick="doLogin()">Login</button>
+			<span id="loginResult"></span><br><br>
+
+			<p>Don’t have an account?
+				<button onclick="showRegister()">Register here</button>
+			</p>
+		</div>
+
+		<!-- Register Form (hidden by default) -->
+		<div id="registerDiv" style="display:none;">
+			<h2>Register</h2>
+			<label>First Name</label><br>
+			<input type="text" id="newFirstName"><br><br>
+
+			<label>Last Name</label><br>
+			<input type="text" id="newLastName"><br><br>
+
+			<label>Username</label><br>
+			<input type="text" id="newUser"><br><br>
+
+			<label>Password</label><br>
+			<input type="password" id="newPass"><br><br>
+
+			<button class="primary" onclick="doRegistration()">Create Account</button>
+			<span id="registerResult"></span><br><br>
+
+			<p>Already have an account?
+				<button class="secondary" onclick="showLogin()">Back to Login</button>
+			</p>
+		</div>
 
 	</div>
 </body>

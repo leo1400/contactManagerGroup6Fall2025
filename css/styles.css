@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  background-color: #121212; /* full dark background */
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+/* Wrapper centers content */
+.wrapper {
+  height: 100vh;
+  display: flex;
+  background-color: #121212; /* dark background */
+  color: #e0e0e0; /* light text */
+  font-family: Arial, sans-serif;
+}
+
+/* Shared styles for login & register boxes */
+#loginDiv,
+#registerDiv {
+  border: solid 1px #333;
+  width: 280px;
+  min-height: 300px;
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 15px;
+  background-color: #1e1e1e; /* dark panel */
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Input fields */
+input {
+  margin-top: 8px;
+  text-align: center;
+  border-radius: 10px;
+  height: 28px;
+  width: 90%;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007BFF;
+  background-color: #333;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.6);
+}
+
+/* General button styles */
+button {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 8px 15px;
+  border: none;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Primary action buttons */
+button.primary {
+  background-color: #4CAF50; /* green */
+  color: white;
+}
+
+button.primary:hover {
+  background-color: #43a047;
+}
+
+/* Secondary action buttons */
+button.secondary {
+  background-color: #333;
+  color: #ddd;
+}
+
+button.secondary:hover {
+  background-color: #444;
+}
+
+/* Special createAccount button if you still use it */
+.createAccount {
+  background-color: #4CAF50;
+  color: white;
+}

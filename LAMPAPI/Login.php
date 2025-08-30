@@ -43,6 +43,7 @@ try{
 	if(!$row){
 		$res = [ 'status' => 'failure' ];
 		sendOutgoingJson($res);
+		exit;
 	}
 	if($row["password"] === $userInput["password"]){
 		$res = ['status' => 'success'];
@@ -60,10 +61,9 @@ try{
 	}else{
 		$res = [ 'status' => 'failure' ];
 		sendOutgoingJson($res);
+		exit;
 	}
-
-
-}catch(Exeception $e){
+}catch(Exception $e){
 		$res = [ 'status' => 'failure' ];
 		sendOutgoingJson($res);
 }
