@@ -29,7 +29,22 @@ try{
 
 	$stmt->execute();
 
-	sendJsonResult("success","User Added");
+	sendJsonResult("success","Account Created Successfully!");
+
+	$stmt2 = $conn->prepare("SELECT id FROM Users where login=?");
+
+	$stmt2->bind_param("s",$userInfo["login"]);
+
+	$stmt2->execute();
+
+	$res = $stmt2->get_result();
+
+	$row = $res->fetch_assoc();
+
+	$_SESSION["userid"] = $row["id"];
+	$_SESSION["firstname"] = $userInfo["firstname"];
+	$_SESSION["lastname"] = $userInfo["lastname"];
+	exit;
 }catch(Exception $e){
 
 }
