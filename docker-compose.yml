@@ -7,6 +7,7 @@ services:
     volumes:
       - ./index.html:/var/www/html/index.html
       - ./LAMPAPI/Login.php:/var/www/html/LAMPAPI/Login.php
+      - ./LAMPAPI/Register.php:/var/www/html/LAMPAPI/Register.php
       - ./js/code.js:/var/www/html/js/code.js
       - ./vendor/:/var/www/html/vendor/
       - ./composer.json:/var/www/html/composer.json
