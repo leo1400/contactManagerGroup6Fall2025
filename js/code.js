@@ -10,7 +10,6 @@ function doLogin() {
 	let userLoginInfo = { "login": userLogin, "password": userPassword }
 	let jsonUserLoginInfo = JSON.stringify(userLoginInfo);
 
-	// how do i send this to my login.api
 	// xmlhttprequest 
 	let htr = new XMLHttpRequest();
 	let url = urlBase + "Login" + phpBase;
@@ -83,7 +82,6 @@ function addContact() {
 	htr.open("POST", url, true);
 	htr.setRequestHeader("Content-Type", "application/json");
 	htr.send(jsonContactInfo);
-
 }
 function doLogout() {
 	window.location.href = loginUrlBase + "logout" + phpBase;
