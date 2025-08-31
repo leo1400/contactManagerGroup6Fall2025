@@ -31,7 +31,7 @@
 			<label>Phone</label><br>
 			<input type="text" id="newContactPhone"><br><br>
 
-			<label>Password</label><br>
+			<label>Email</label><br>
 			<input type="email" id="newContactEmail"><br><br>
 
 			<button class="primary" onclick="addContact()">Add contact</button>
