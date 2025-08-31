@@ -17,7 +17,8 @@ body {
 
 /* Shared styles for login & register boxes */
 #loginDiv,
-#registerDiv {
+#registerDiv,
+#addContactDiv {
   border: solid 1px #333;
   width: 280px;
   min-height: 300px;

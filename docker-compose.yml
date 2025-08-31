@@ -9,6 +9,7 @@ services:
       - ./css/styles.css:/var/www/html/css/styles.css
       - ./LAMPAPI/Login.php:/var/www/html/LAMPAPI/Login.php
       - ./LAMPAPI/Register.php:/var/www/html/LAMPAPI/Register.php
+      - ./LAMPAPI/Add_Contact.php:/var/www/html/LAMPAPI/Add_Contact.php
       - ./js/code.js:/var/www/html/js/code.js
       - ./vendor/:/var/www/html/vendor/
       - ./composer.json:/var/www/html/composer.json
