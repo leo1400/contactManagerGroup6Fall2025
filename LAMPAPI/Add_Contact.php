@@ -29,6 +29,7 @@ try{
 	$stmt = $conn->prepare("INSERT INTO Contacts(firstname,lastname,phone,email,userID) VALUES(?,?,?,?,?)");
 
 	$userInfo = getUserInput();
+	$userInfo["userid"] = $_SESSION["userid"];
 
 	$stmt->bind_param("ssssi",$userInfo["firstname"],$userInfo["lastname"],$userInfo["phone"],$userInfo["email"],$userInfo["userid"]);
 
