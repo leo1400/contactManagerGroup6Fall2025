@@ -22,7 +22,7 @@ try{
 
 	$userSearch = getUserInput();
 	$search = '%' . $userSearch["search"] . '%';
-	$userSearch["userID"] = /*$_SESSION["userid"];*/ 7;
+	$userSearch["userID"] = $_SESSION["userid"];
 
 	$stmt->bind_param("ssssi",$search,$search,$search,$search,$userSearch["userID"] );
 
