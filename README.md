@@ -52,7 +52,7 @@ Then run this command to enter test database
 ```bash
 mysql -u root -p
 ```
-mysql will access for the password which is in the docker-compose.yml file
+mysql will ask for a password for the user "root" which is in the docker-compose.yml file
 ```bash
 rootpass
 ```
