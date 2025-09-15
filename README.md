@@ -37,5 +37,23 @@ Once running, visit the app at:
 ## 4. Stopping the Containers
 docker compose down
 
-## 5 Trouble Shooting
+## 5. Trouble Shooting
 File Permissions (Apache): If you see permission issues on Windows, add this to the web service in docker-compose.yml:
+
+## 6. Useful commands
+
+If you want to add sql data to the testdb use
+```bash
+docker compose exec db bash
+```
+This command will execute the bash program in db(the container)
+
+Then run this command to enter test database
+```bash
+mysql -u root -p
+```
+mysql will access for the password which is in the docker-compose.yml file
+```bash
+rootpass
+```
+Now you should be in the database where you can run whatever commands you need.
