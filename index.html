@@ -1,56 +1,54 @@
 <html>
+	<head>
+	    <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>contacty</title>
+		<script src="js/code.js"></script>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- Login Form -->
+			<div class="menu-div" id="login-div">
+				<h2>Login</h2>
+				<label for="user-login">Username</label><br>
+				<input type="text" id="user-login"><br><br>
 
-<head>
-	<meta charset="UTF-8">
-	<title>contacty</title>
-	<script src="js/code.js"></script>
-	<link rel="stylesheet" href="css/styles.css">
-</head>
+				<label for="user-password">Password</label><br>
+				<input type="password" id="user-password"><br><br>
 
-<body>
-	<div class="wrapper">
+				<span id="login-result"></span>
 
-		<!-- Login Form -->
-		<div id="loginDiv">
-			<h2>Login</h2>
-			<label>Username</label><br>
-			<input type="text" id="userLogin"><br><br>
+				<button type="submit" class="primary" onclick="doLogin()">Login</button>
 
-			<label>Password</label><br>
-			<input type="password" id="userPassword"><br><br>
+				<p>Don’t have an account?
+					<button type="button" class="secondary" onclick="showRegister()">Register here</button>
+				</p>
+			</div>
 
-			<button class="primary" onclick="doLogin()">Login</button>
-			<span id="loginResult"></span><br><br>
+			<!-- Register Form (hidden by default) -->
+			<div class="menu-div" id="register-div" style="display:none;">
+				<h2>Register</h2>
+				<label for="register-fname">First Name</label><br>
+				<input type="text" id="register-fname"><br><br>
 
-			<p>Don’t have an account?
-				<button onclick="showRegister()">Register here</button>
-			</p>
+				<label for="register-lname">Last Name</label><br>
+				<input type="text" id="register-lname"><br><br>
+
+				<label for="register-user">Username</label><br>
+				<input type="text" id="register-user"><br><br>
+
+				<label for="register-password">Password</label><br>
+				<input type="password" id="register-password"><br><br>
+
+				<button class="primary" onclick="doRegistration()">Create Account</button>
+				<span id="register-result"></span><br><br>
+
+				<p>Already have an account?
+					<button type="button" class="secondary" onclick="showLogin()">Back to Login</button>
+				</p>
+			</div>
 		</div>
-
-		<!-- Register Form (hidden by default) -->
-		<div id="registerDiv" style="display:none;">
-			<h2>Register</h2>
-			<label>First Name</label><br>
-			<input type="text" id="newFirstName"><br><br>
-
-			<label>Last Name</label><br>
-			<input type="text" id="newLastName"><br><br>
-
-			<label>Username</label><br>
-			<input type="text" id="newUser"><br><br>
-
-			<label>Password</label><br>
-			<input type="password" id="newPass"><br><br>
-
-			<button class="primary" onclick="doRegistration()">Create Account</button>
-			<span id="registerResult"></span><br><br>
-
-			<p>Already have an account?
-				<button class="secondary" onclick="showLogin()">Back to Login</button>
-			</p>
-		</div>
-
-	</div>
-</body>
-
+	</body>
 </html>
