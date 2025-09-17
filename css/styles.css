@@ -1,37 +1,23 @@
 body {
   margin: 0;
-  background-color: #121212; /* full dark background */
-  color: #e0e0e0;
+  background-color: #044A62; /* full dark background */
+  color: #003B4E;
   font-family: Arial, sans-serif;
   height: 100vh;
+  overflow: hidden;
 }
 
-/* Wrapper centers content */
+/* For flex based column display */
 .wrapper {
   height: 100vh;
-  display: flex;
-  background-color: #121212; /* dark background */
-  color: #e0e0e0; /* light text */
-  font-family: Arial, sans-serif;
-}
-
-/* Shared styles for login & register boxes */
-#loginDiv,
-#registerDiv,
-#addContactDiv {
-  border: solid 1px #333;
-  width: 280px;
-  min-height: 300px;
-  padding: 20px;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 15px;
-  background-color: #1e1e1e; /* dark panel */
+  min-width: 100%;
   margin: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #044A62; /* dark background */
+  color: #003B4E; /* dark text */
+  font-family: Arial, sans-serif;
 }
 
 /* Input fields */
@@ -42,15 +28,15 @@ input {
   height: 28px;
   width: 90%;
   border: 1px solid #444;
-  background-color: #2a2a2a;
-  color: #fff;
+  background-color: #33738A;
+  color: #FCF9EC;
   transition: all 0.2s ease-in-out;
 }
 
 input:focus {
   outline: none;
   border-color: #007BFF;
-  background-color: #333;
+  background-color: #044A62;
   box-shadow: 0 0 6px rgba(0, 123, 255, 0.6);
 }
 
@@ -77,16 +63,133 @@ button.primary:hover {
 
 /* Secondary action buttons */
 button.secondary {
-  background-color: #333;
-  color: #ddd;
+  background-color: #044A62;
+  color: #fff;
 }
 
 button.secondary:hover {
-  background-color: #444;
+  background-color: #023951;
 }
 
 /* Special createAccount button if you still use it */
-.createAccount {
+.create-account {
   background-color: #4CAF50;
   color: white;
+}
+
+/* Shared styles for login, register, add contact boxes */
+.menu-div {
+  border: solid 1px #333;
+  width: 280px;
+  min-height: 300px;
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 15px;
+  background-color: #FCF9EC; /* light panel */
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Gray out screen for add contact modal */
+#add-background {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+
+/* Animated modal with block display, no flex */
+#add-contact-div {
+	min-height: 425px;
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: slidedown;
+	animation-duration: 0.6s
+}
+
+/* Add Animation */
+@-webkit-keyframes slidedown {
+	from {
+	transform: translateY(-300%);
+	}
+	to {
+	transform: translateY(0%);
+	}
+}
+
+@keyframes slidedown {
+	from {
+	transform: translateY(-300%);
+	}
+	to {
+	transform: translateY(0%);
+	}
+}
+
+#welcome {
+	margin: 18px 0 8px 18px;
+	color: #FCF9EC; 
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#searchbar {
+	background-color: #FCF9EC;
+	border: #003B4E;
+	border-radius: 14px 14px 0 0;
+	padding: 8px;
+	font-size: 18px;
+	color: #044A62;
+}
+
+/* Connects the search bar, contacts display, and add button */
+#display-contact-div {
+	width: 90%;
+	padding: 0;
+	margin-top: 0;
+	margin: auto;
+	background-color: #FCF9EC;
+	border: 3px, solid, #003B4E;
+	border-radius: 0 0 14px 14px;
+}
+
+.contact-form {
+	padding-bottom: 0; 
+	margin-bottom: 0;
+}
+
+#trash-icon {
+	cursor: pointer;
+	font-size: 36px; 
+	margin-left: 90%;
+}
+
+#add-icon {
+	cursor: pointer;
+	margin-bottom: 6px;
+}
+
+#cancel-icon {
+	cursor: pointer;
+	font-size: 25px;
+	margin-right: 4px;
+	float: right;
+}
+
+.problem-icons {
+	display: none; 
+	position: relative;
+	top: 6px;
+	left: 9px
+}
+
+#error-message {
+	display: none; 
+	color: red
 }
