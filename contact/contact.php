@@ -9,7 +9,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>contacty</title>
-		<script src="js/code.js"></script>
+		<script src="../js/code.js"></script>
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	</head>
