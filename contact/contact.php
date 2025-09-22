@@ -1,10 +1,11 @@
-<?php
-	session_start();
-	if(!isset($_SESSION['userid'])){
-		header("Location: http://contactymanager.shop/");
-	}
-?>
+<!DOCTYPE html>
 <html>
+	<?php
+		session_start();
+		if(!isset($_SESSION['userid'])){
+			header("Location: http://contactymanager.shop/");
+		}
+	?>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
