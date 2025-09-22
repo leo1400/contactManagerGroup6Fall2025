@@ -1,11 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['userid'])) {
+	header("Location: http://contactymanager.shop/");
+	exit;
+}
+$sessionFirstName = isset($_SESSION['firstname']) ? $_SESSION['firstname'] : '';
+?>
 <!DOCTYPE html>
 <html>
-	<?php
-		session_start();
-		if(!isset($_SESSION['userid'])){
-			header("Location: http://contactymanager.shop/");
-		}
-	?>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -15,7 +17,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	</head>
 	<body>
-		<p id="welcome">Welcome, <?php echo $_SESSION['firstname']?>, you are signed in</p>
+		<p id="welcome">Welcome, <?php echo htmlspecialchars($sessionFirstName); ?>, you are signed in</p>
 		
 		<div class="wrapper">
 			<div id="contact-div">
@@ -30,12 +32,15 @@
 			
 				<!-- Display contact -->
 				<div id="display-contact-div">
-					<br>
-					<p style="display: none">
-					<i title="Update contact" class="material-icons" id="edit-icon">edit</i>
-					<i title="Delete contact" class="material-icons" id="trash-icon">delete_forever</i>
-					</p>
-					<i title="Add new contact" onclick="showAddContact()" class="material-icons" id="add-icon">add</i>
+					<div class="contact-actions">
+						<p style="display: none">
+						<i title="Update contact" class="material-icons" id="edit-icon">edit</i>
+						<i title="Delete contact" class="material-icons" id="trash-icon">delete_forever</i>
+						</p>
+						<i title="Add new contact" onclick="showAddContact()" class="material-icons" id="add-icon">add</i>
+					</div>
+					<p id="search-feedback" class="search-feedback"></p>
+					<div id="contacts-list" class="contacts-list"></div>
 				</div>
 			</div>
 			
@@ -60,7 +65,7 @@
 					
 					<p class="add-element" id="error-message">Enter a valid contact!</p>
 
-					<button class="primary add-element" id="add-button" onclick="addContact()">Add contact</button>
+					<button class="primary add-element" id="add-button" onclick="submitContact()">Add contact</button>
 					<span id="add-contact-result"></span><br><br>
 				</div>
 			</div>
