@@ -77,6 +77,11 @@ function submitContact() {
 	let contactLastName = document.getElementById("contact-lname").value;
 	let contactPhone = document.getElementById("contact-phone").value;
 	let contactEmail = document.getElementById("contact-email").value;
+
+	const errorBanner = document.getElementById("error-message");
+	if (errorBanner) {
+		errorBanner.style.display = "none";
+	}
 	
 	//	Validate no empty or incorrect fields
 	let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -90,8 +95,14 @@ function submitContact() {
 		valid = false;
 	}
 	else {
-		document.getElementById("contact-fname").style = '';
-		document.getElementById("problem-contact-fname").style.display = "none";
+		const fnameField = document.getElementById("contact-fname");
+		if (fnameField) {
+			fnameField.classList.remove("input-error");
+		}
+		const fnameIcon = document.getElementById("problem-contact-fname");
+		if (fnameIcon) {
+			fnameIcon.style.display = "none";
+		}
 	}
 	
 	if(contactLastName == "") {
@@ -99,8 +110,14 @@ function submitContact() {
 		valid = false;
 	}
 	else {
-		document.getElementById("contact-lname").style = '';
-		document.getElementById("problem-contact-lname").style.display = "none";
+		const lnameField = document.getElementById("contact-lname");
+		if (lnameField) {
+			lnameField.classList.remove("input-error");
+		}
+		const lnameIcon = document.getElementById("problem-contact-lname");
+		if (lnameIcon) {
+			lnameIcon.style.display = "none";
+		}
 	}
 	
 	if (!emailRegex.test(contactEmail)) {
@@ -108,8 +125,14 @@ function submitContact() {
 		valid = false;
 	}
 	else {
-		document.getElementById("contact-email").style = '';
-		document.getElementById("problem-email").style.display = "none";
+		const emailField = document.getElementById("contact-email");
+		if (emailField) {
+			emailField.classList.remove("input-error");
+		}
+		const emailIcon = document.getElementById("problem-email");
+		if (emailIcon) {
+			emailIcon.style.display = "none";
+		}
 	}
 
 	if (!phoneRegex.test(contactPhone)) {
@@ -117,8 +140,14 @@ function submitContact() {
 		valid = false;
 	}
 	else {
-		document.getElementById("contact-phone").style = '';
-		document.getElementById("problem-phone").style.display = "none";
+		const phoneField = document.getElementById("contact-phone");
+		if (phoneField) {
+			phoneField.classList.remove("input-error");
+		}
+		const phoneIcon = document.getElementById("problem-phone");
+		if (phoneIcon) {
+			phoneIcon.style.display = "none";
+		}
 	}
 	
 	if(!valid)
@@ -194,7 +223,7 @@ function showAddContact(prefillContact = null) {
 	const backdrop = document.getElementById("add-background");
 	const modal = document.getElementById("add-contact-div");
 	if (backdrop) {
-		backdrop.style.display = "block";
+		backdrop.style.display = "flex";
 	}
 	if (modal) {
 		modal.style.display = "block";
@@ -266,7 +295,7 @@ function resetField(fieldId, problemId) {
 	const field = document.getElementById(fieldId);
 	if (field) {
 		field.value = '';
-		field.style = '';
+		field.classList.remove("input-error");
 	}
 	const indicator = document.getElementById(problemId);
 	if (indicator) {
@@ -277,7 +306,7 @@ function resetField(fieldId, problemId) {
 function incorrectField(fieldId, problemId) {
 	const field = document.getElementById(fieldId);
 	if (field) {
-		field.style = "background-color: red; box-shadow:  0 4px 12px rgba(1, 0, 0, 0);";
+		field.classList.add("input-error");
 	}
 
 	const indicator = document.getElementById(problemId);
@@ -315,7 +344,7 @@ function clearValidationIndicators() {
 	fieldIds.forEach(function(id) {
 		const field = document.getElementById(id);
 		if (field) {
-			field.style = '';
+			field.classList.remove("input-error");
 		}
 	});
 
