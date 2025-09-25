@@ -449,7 +449,8 @@ function renderContacts(contacts) {
 
 		const phoneElement = document.createElement("span");
 		phoneElement.className = "contact-phone";
-		phoneElement.textContent = contact && contact.phone ? `Phone: ${contact.phone}` : "Phone: not provided";
+		const formattedPhone = formatPhone(contact && contact.phone ? String(contact.phone) : "");
+		phoneElement.textContent = formattedPhone ? `Phone: ${formattedPhone}` : "Phone: not provided";
 
 		const emailElement = document.createElement("span");
 		emailElement.className = "contact-email";
@@ -463,6 +464,26 @@ function renderContacts(contacts) {
 
 		listElement.appendChild(card);
 	});
+}
+
+function formatPhone(raw) {
+	const digits = raw.replace(/\D/g, "");
+	if (digits.length === 10) {
+		const area = digits.slice(0, 3);
+		const prefix = digits.slice(3, 6);
+		const line = digits.slice(6);
+		return `(${area}) ${prefix}-${line}`;
+	}
+	if (digits.length === 11 && digits.startsWith("1")) {
+		const area = digits.slice(1, 4);
+		const prefix = digits.slice(4, 7);
+		const line = digits.slice(7);
+		return `+1 (${area}) ${prefix}-${line}`;
+	}
+	if (!digits) {
+		return "";
+	}
+	return raw;
 }
 
 function formatContactName(contact) {
