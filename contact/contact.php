@@ -24,10 +24,10 @@ if ($displayName === '') {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Seamates</title>
 		<script src="../js/code.js"></script>
-		<link rel="stylesheet" href="../css/styles.css?v=20240925b">
+		<link rel="stylesheet" href="../css/styles.css?v=20240926a">
 		<link rel="icon" type="image/svg+xml" href="../img/seamates-fish.svg">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

@@ -726,18 +726,18 @@ button.secondary.link:active {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   body.landing {
-    display: block;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: clamp(28px, 8vh, 48px) clamp(18px, 7vw, 28px);
   }
 
   .auth-wrapper {
-    width: 100%;
-    max-width: 360px;
+    width: min(100%, 360px);
     margin: 0 auto;
-    padding: 32px 16px 40px;
-    align-items: center;
     gap: 24px;
   }
 
@@ -751,8 +751,18 @@ button.secondary.link:active {
   .brand-panel {
     align-items: center;
     text-align: center;
-    padding: 34px 20px 28px;
-    gap: 14px;
+    padding: clamp(28px, 9vw, 36px) clamp(20px, 8vw, 28px);
+    gap: 16px;
+  }
+
+  .brand-panel h1 {
+    font-size: clamp(2.1rem, 7.8vw, 2.6rem);
+  }
+
+  .brand-subtitle {
+    max-width: 28ch;
+    font-size: clamp(1rem, 4.2vw, 1.15rem);
+    line-height: 1.6;
   }
 
   .brand-panel::before {
@@ -780,7 +790,7 @@ button.secondary.link:active {
   }
 
   .auth-card {
-    padding: 28px 20px;
+    padding: clamp(26px, 7.5vw, 32px) clamp(20px, 7vw, 26px);
   }
 
   .form-footer {
@@ -792,8 +802,8 @@ button.secondary.link:active {
 
   .reef {
     width: 100%;
-    margin: 16px auto 0;
-    height: 180px;
+    margin: 12px auto 0;
+    height: clamp(160px, 45vw, 190px);
     border-radius: 30px;
     background:
       linear-gradient(180deg, rgba(0, 38, 59, 0.88) 0%, rgba(0, 16, 28, 0.96) 100%);
@@ -1270,7 +1280,7 @@ button.primary.halo:hover {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   body.app-body {
     display: block;
     padding: 0;
