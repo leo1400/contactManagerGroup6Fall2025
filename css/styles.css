@@ -478,12 +478,12 @@ body.app-body {
 .reef__mini-fish {
   position: absolute;
   display: block;
-  width: 60px;
+  width: 64px;
   height: 24px;
-  border-radius: 20px 14px 14px 20px;
+  border-radius: 22px;
   background: linear-gradient(135deg, rgba(94, 194, 209, 0.9), rgba(4, 102, 200, 0.72));
-  filter: drop-shadow(0 10px 18px rgba(4, 102, 200, 0.35));
-  opacity: 0.9;
+  filter: drop-shadow(0 10px 18px rgba(4, 102, 200, 0.45));
+  opacity: 0.92;
   animation: mobileSwim 11s ease-in-out infinite;
 }
 
@@ -491,8 +491,8 @@ body.app-body {
   content: "";
   position: absolute;
   top: 50%;
-  right: -16px;
-  width: 20px;
+  right: -18px;
+  width: 22px;
   height: 14px;
   border-radius: 60% 0 0 60%;
   background: inherit;
@@ -503,38 +503,38 @@ body.app-body {
 .reef__mini-fish--two,
 .reef__mini-fish--four {
   background: linear-gradient(135deg, rgba(255, 174, 120, 0.92), rgba(255, 111, 89, 0.75));
-  filter: drop-shadow(0 10px 18px rgba(255, 111, 89, 0.35));
+  filter: drop-shadow(0 10px 18px rgba(255, 111, 89, 0.45));
 }
 
 .reef__mini-fish--one {
-  top: 26px;
-  left: 20px;
+  top: 34px;
+  left: 26px;
   animation-duration: 12s;
 }
 
 .reef__mini-fish--two {
-  top: 64px;
-  right: 28px;
-  width: 54px;
-  height: 22px;
+  top: 74px;
+  right: 34px;
+  width: 58px;
+  height: 24px;
   animation-duration: 9s;
   animation-delay: -2s;
 }
 
 .reef__mini-fish--three {
-  bottom: 30px;
-  left: 38px;
-  width: 50px;
-  height: 20px;
+  bottom: 36px;
+  left: 44px;
+  width: 54px;
+  height: 22px;
   animation-duration: 10s;
   animation-delay: -4s;
 }
 
 .reef__mini-fish--four {
-  bottom: 48px;
-  right: 52px;
-  width: 56px;
-  height: 22px;
+  bottom: 56px;
+  right: 60px;
+  width: 60px;
+  height: 24px;
   animation-duration: 13s;
   animation-delay: -6s;
 }
@@ -751,8 +751,8 @@ button.secondary.link:active {
   .brand-panel {
     align-items: center;
     text-align: center;
-    padding: 30px 22px;
-    gap: 16px;
+    padding: 34px 20px 28px;
+    gap: 14px;
   }
 
   .brand-panel::before {
@@ -761,13 +761,17 @@ button.secondary.link:active {
     inset: 18px;
     border-radius: 22px;
     background:
-      radial-gradient(circle at 18% 28%, rgba(94, 194, 209, 0.32) 0%, transparent 58%),
-      radial-gradient(circle at 82% 24%, rgba(255, 161, 120, 0.28) 0%, transparent 55%),
-      radial-gradient(circle at 32% 72%, rgba(4, 102, 200, 0.22) 0%, transparent 60%),
-      radial-gradient(circle at 68% 78%, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
-    opacity: 0.85;
-    filter: blur(0.2px);
+      radial-gradient(circle at 18% 28%, rgba(94, 194, 209, 0.24) 0%, transparent 58%),
+      radial-gradient(circle at 82% 24%, rgba(255, 161, 120, 0.22) 0%, transparent 55%),
+      radial-gradient(circle at 32% 72%, rgba(4, 102, 200, 0.18) 0%, transparent 60%),
+      radial-gradient(circle at 68% 78%, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    opacity: 0.8;
+    filter: blur(0.8px);
     z-index: 0;
+  }
+
+  .brand-panel::after {
+    border: 1px solid rgba(94, 194, 209, 0.18);
   }
 
   .brand-panel > * {
@@ -776,7 +780,7 @@ button.secondary.link:active {
   }
 
   .auth-card {
-    padding: 28px 22px;
+    padding: 28px 20px;
   }
 
   .form-footer {
@@ -788,14 +792,14 @@ button.secondary.link:active {
 
   .reef {
     width: 100%;
-    margin: 20px auto 0;
-    height: 150px;
-    border-radius: 24px;
+    margin: 16px auto 0;
+    height: 180px;
+    border-radius: 30px;
     background:
-      linear-gradient(180deg, rgba(2, 36, 60, 0.74) 0%, rgba(1, 22, 39, 0.9) 100%);
+      linear-gradient(180deg, rgba(0, 38, 59, 0.88) 0%, rgba(0, 16, 28, 0.96) 100%);
     box-shadow:
-      inset 0 0 0 1px rgba(94, 194, 209, 0.18),
-      inset 0 -20px 40px rgba(1, 10, 22, 0.55);
+      inset 0 0 0 1px rgba(94, 194, 209, 0.26),
+      inset 0 -26px 48px rgba(1, 12, 24, 0.64);
     position: relative;
     overflow: hidden;
   }
@@ -804,28 +808,28 @@ button.secondary.link:active {
   .reef::after {
     content: "";
     position: absolute;
-    width: 54px;
-    height: 22px;
-    border-radius: 60% 40% 50% 50%;
-    opacity: 0.75;
+    width: 72px;
+    height: 28px;
+    border-radius: 70% 40% 55% 50%;
+    opacity: 0.92;
   }
 
   .reef::before {
-    top: 26px;
-    left: 24px;
-    background: linear-gradient(135deg, rgba(94, 194, 209, 0.9), rgba(4, 102, 200, 0.72));
+    top: 32px;
+    left: 26px;
+    background: linear-gradient(135deg, rgba(94, 194, 209, 0.92), rgba(4, 115, 214, 0.74));
     box-shadow:
-      36px 16px 0 -6px rgba(255, 255, 255, 0.18),
-      18px 38px 0 -8px rgba(94, 194, 209, 0.25);
+      46px 18px 0 -6px rgba(255, 255, 255, 0.2),
+      24px 46px 0 -8px rgba(94, 194, 209, 0.25);
   }
 
   .reef::after {
     right: 28px;
-    bottom: 34px;
-    background: linear-gradient(135deg, rgba(255, 175, 120, 0.9), rgba(255, 111, 89, 0.75));
+    bottom: 40px;
+    background: linear-gradient(135deg, rgba(255, 175, 120, 0.94), rgba(255, 111, 89, 0.8));
     box-shadow:
-      -32px -12px 0 -6px rgba(4, 102, 200, 0.18),
-      -12px 32px 0 -10px rgba(255, 111, 89, 0.22);
+      -42px -14px 0 -6px rgba(4, 102, 200, 0.2),
+      -18px 40px 0 -10px rgba(255, 111, 89, 0.25);
   }
 
   .reef__floor,
@@ -840,10 +844,14 @@ button.secondary.link:active {
 
   .reef__mobile {
     display: block;
+    inset: 8px 12px;
   }
 
   .reef__mini-fish {
     will-change: transform;
+    border-radius: 22px;
+    opacity: 1;
+    mix-blend-mode: screen;
   }
 
   .form-panel {
