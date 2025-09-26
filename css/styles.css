@@ -659,6 +659,11 @@ button.secondary.link:active {
     padding: 40px 18px;
   }
 
+  .brand-panel {
+    align-items: center;
+    text-align: center;
+  }
+
   .auth-wrapper {
     width: min(100%, 420px);
     margin-inline: auto;
@@ -681,6 +686,88 @@ button.secondary.link:active {
     align-items: center;
     gap: 6px;
     text-align: center;
+  }
+
+  .reef {
+    margin-top: 28px;
+    height: 200px;
+    transform-origin: top center;
+  }
+
+  .reef__floor,
+  .reef__ridge {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .reef__floor {
+    width: 240px;
+    height: 52px;
+  }
+
+  .reef__ridge {
+    width: 220px;
+    height: 108px;
+  }
+
+  .reef__coral--left {
+    left: 8%;
+    transform: rotate(-6deg) scale(0.82);
+  }
+
+  .reef__coral--center {
+    left: 50%;
+    width: 66px;
+    height: 108px;
+    transform: translateX(-50%) rotate(4deg) scale(0.94);
+  }
+
+  .reef__coral--right {
+    right: 8%;
+    width: 64px;
+    height: 112px;
+    transform: rotate(5deg) scale(0.9);
+  }
+
+  .reef__kelp--one {
+    left: 58%;
+  }
+
+  .reef__kelp--two {
+    left: 74%;
+  }
+
+  .reef__fish--tang {
+    top: 22px;
+    left: calc(50% - 58px);
+    width: 116px;
+    height: 70px;
+  }
+
+  .reef__fish--clown {
+    left: 14%;
+    top: 128px;
+    width: 96px;
+    height: 58px;
+  }
+
+  .reef__fish--butterfly {
+    right: 12%;
+    top: 64px;
+    width: 102px;
+    height: 60px;
+  }
+
+  .reef__bubble--small {
+    left: calc(50% - 6px);
+  }
+
+  .reef__bubble--medium {
+    left: 58%;
+  }
+
+  .reef__bubble--large {
+    left: 66%;
   }
 }
 
@@ -1105,6 +1192,28 @@ button.primary.halo:hover {
     margin-inline: auto;
   }
 
+  .app-header {
+    width: 100%;
+    margin-inline: auto;
+    align-items: center;
+    text-align: center;
+    padding: 24px 20px;
+  }
+
+  .app-brand,
+  .app-user {
+    align-items: center;
+    text-align: center;
+  }
+
+  .user-meta {
+    align-items: center;
+  }
+
+  .app-shell {
+    gap: 24px;
+  }
+
   .app-header,
   .panel {
     width: 100%;
@@ -1112,7 +1221,28 @@ button.primary.halo:hover {
   }
 
   .panel {
-    padding: 28px 22px;
+    padding: 26px 20px;
+  }
+
+  .app-content {
+    gap: 24px;
+  }
+
+  .panel-header h2,
+  .panel-header p,
+  .toolbar-copy {
+    text-align: center;
+  }
+
+  .panel-toolbar {
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .panel-toolbar .primary.halo {
+    width: 100%;
+    justify-content: center;
   }
 
   .modal-card {
@@ -1121,7 +1251,7 @@ button.primary.halo:hover {
 
   .panel-toolbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 
