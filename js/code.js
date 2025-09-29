@@ -39,6 +39,24 @@ function doRegistration() {
 	let userFirstname = document.getElementById("register-fname").value;
 	let userLastname = document.getElementById("register-lname").value;
 
+	userLogin = userLogin.trim();
+	userPassword = userPassword.trim();
+	userFirstname = userFirstname.trim();
+	userLastname = userLastname.trim();
+
+	const registerResult = document.getElementById("register-result");
+	if (registerResult) {
+		registerResult.innerHTML = "";
+	}
+
+	const passwordPattern = /^[A-Za-z]{8,}$/;
+	if (!passwordPattern.test(userPassword)) {
+		if (registerResult) {
+			registerResult.innerHTML = "Password must be at least 8 letters (A-Z only).";
+		}
+		return;
+	}
+
 	let userInfo = { "firstname": userFirstname, "lastname": userLastname, "login": userLogin, "password": userPassword };
 	let jsonUserInfo = JSON.stringify(userInfo);
 
@@ -51,9 +69,9 @@ function doRegistration() {
 			if (result.status == "success") {
 				window.location.href = loginUrlBase + "contact" + phpBase;
 			} else {
-
-				let spanRegisterResult = document.getElementById("register-result");
-				spanRegisterResult.innerHTML = result.message;
+				if (registerResult) {
+					registerResult.innerHTML = result.message;
+				}
 			}
 		}
 	}
@@ -657,3 +675,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	searchContacts(searchInput.value);
 });
+

@@ -100,7 +100,8 @@
 
 					<div class="form-field">
 						<label class="field-label" for="register-password">Password</label>
-						<input class="auth-input" type="password" id="register-password" autocomplete="new-password">
+						<small class="auth-hint" id="register-password-requirement">Password must be at least 8 letters (A-Z only).</small>
+						<input class="auth-input" type="password" id="register-password" autocomplete="new-password" minlength="8" pattern="[A-Za-z]{8,}" title="Password must be at least 8 letters (A-Z only).">
 					</div>
 
 					<button class="primary" onclick="doRegistration()">Make a splash</button>

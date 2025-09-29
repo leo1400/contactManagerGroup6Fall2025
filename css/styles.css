@@ -1445,3 +1445,10 @@ button.primary.halo:hover {
     transform: scale(1.1);
   }
 }
+.auth-hint {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    font-size: 0.875rem;
+    color: #5f6368;
+}

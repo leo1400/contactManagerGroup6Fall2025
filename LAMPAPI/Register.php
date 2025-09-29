@@ -16,14 +16,20 @@ if(!$conn){
 	die("Connection Failed : " .mysqli_connect_error());
 }
 try{
-	if(checkIfUserExists()){
-		//return a json with status failure, message user exists
+	$userInfo = getUserInput();
+	$userInfo["login"] = isset($userInfo["login"]) ? trim($userInfo["login"]) : '';
+	$userInfo["password"] = isset($userInfo["password"]) ? trim($userInfo["password"]) : '';
+
+	if(!isPasswordValid($userInfo["password"])){
+		sendJsonResult("failure","Password must be at least 8 letters (A-Z only).");
+		exit;
+	}
+
+	if(checkIfUserExists($userInfo["login"])){
 		sendJsonResult("failure","User Already Exists");
 		exit;
 	}
 	$stmt = $conn->prepare("INSERT INTO Users(firstname,lastname,login,password) VALUES(?,?,?,?)");
-
-	$userInfo = getUserInput();
 
 	$stmt->bind_param("ssss",$userInfo["firstname"],$userInfo["lastname"],$userInfo["login"],$userInfo["password"]);
 
@@ -49,8 +55,20 @@ try{
 
 }
 
+function isPasswordValid($password){
+	if($password === null){
+		return false;
+	}
+	if(strlen($password) < 8){
+		return false;
+	}
+	if(!preg_match('/^[A-Za-z]+$/', $password)){
+		return false;
+	}
+	return true;
+}
 
-function checkIfUserExists(){
+function checkIfUserExists($login){
 	$servername = $_ENV['DB_HOST'];
 	$sqlUser = $_ENV['DB_USER'];
 	$sqlPass = $_ENV['DB_PASS'];
@@ -61,13 +79,10 @@ function checkIfUserExists(){
 	}
 	try{
 		$stmt = $conn->prepare("SELECT login FROM Users WHERE login=?");
-		
-		// get user input
-		$userInfo = getUserInput();
 
 		$stmt->bind_param("s",$userLogin);
 
-		$userLogin = $userInfo["login"];
+		$userLogin = $login;
 
 		$stmt->execute();
 
@@ -75,15 +90,14 @@ function checkIfUserExists(){
 
 		$row = $result->fetch_assoc();
 
-		// if user exist return true
 		if($row){
 			return true;
 		}
 		return false;
-		
-}catch(Exception $e){
 
-}
+	}catch(Exception $e){
+
+	}
 }
 function getUserInput(){
 	// you have to get this from php://input
