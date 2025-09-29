@@ -18,13 +18,16 @@ $sqlPass = $_ENV['DB_PASS'];
 
 $conn = new mysqli($servername, $sqlUser,$sqlPass,$_ENV['DB_NAME']);
 try{
-	$stmt = $conn->prepare("SELECT * FROM Contacts WHERE (firstname like ? OR lastname like ? OR email like ? OR phone like ?) and userID=?");
+	$stmt = $conn->prepare("SELECT * FROM Contacts WHERE (firstname LIKE ? OR lastname LIKE ? OR email LIKE ? OR phone LIKE ? OR CONCAT_WS(' ', firstname, lastname) LIKE ? OR CONCAT_WS(' ', lastname, firstname) LIKE ? OR REPLACE(CONCAT_WS(' ', firstname, lastname), ' ', '') LIKE ? OR REPLACE(CONCAT_WS(' ', lastname, firstname), ' ', '') LIKE ?) and userID=?");
 
 	$userSearch = getUserInput();
-	$search = '%' . $userSearch["search"] . '%';
+	$rawSearch = isset($userSearch["search"]) ? $userSearch["search"] : '';
+	$normalizedSearch = preg_replace('/\s+/', ' ', trim($rawSearch)); // collapse repeated whitespace
+	$searchWithSpaces = '%' . $normalizedSearch . '%';
+	$searchWithoutSpaces = '%' . str_replace(' ', '', $normalizedSearch) . '%';
 	$userSearch["userID"] = $_SESSION["userid"];
 
-	$stmt->bind_param("ssssi",$search,$search,$search,$search,$userSearch["userID"] );
+	$stmt->bind_param("ssssssssi",$searchWithSpaces,$searchWithSpaces,$searchWithSpaces,$searchWithSpaces,$searchWithSpaces,$searchWithSpaces,$searchWithoutSpaces,$searchWithoutSpaces,$userSearch["userID"] );
 
 	$stmt->execute();
 
